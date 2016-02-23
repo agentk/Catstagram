@@ -10,6 +10,8 @@
 		735DDDA81C7C77E900F7332F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DDD9D1C7C77E900F7332F /* AppDelegate.swift */; };
 		735DDDA91C7C77E900F7332F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735DDDA11C7C77E900F7332F /* Assets.xcassets */; };
 		735DDDAA1C7C77E900F7332F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735DDDA21C7C77E900F7332F /* LaunchScreen.storyboard */; };
+		73C5B8E81C7C83EC00A847F8 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5B8E71C7C83EC00A847F8 /* AppRouter.swift */; };
+		73C5B8EA1C7C843F00A847F8 /* AppBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5B8E91C7C843F00A847F8 /* AppBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		735DDDA11C7C77E900F7332F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735DDDA31C7C77E900F7332F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		735DDDA41C7C77E900F7332F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73C5B8E71C7C83EC00A847F8 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		73C5B8E91C7C843F00A847F8 /* AppBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,9 @@
 		735DDD9C1C7C77E900F7332F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				73C5B8E91C7C843F00A847F8 /* AppBase.swift */,
 				735DDD9D1C7C77E900F7332F /* AppDelegate.swift */,
+				73C5B8E71C7C83EC00A847F8 /* AppRouter.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -241,7 +247,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73C5B8E81C7C83EC00A847F8 /* AppRouter.swift in Sources */,
 				735DDDA81C7C77E900F7332F /* AppDelegate.swift in Sources */,
+				73C5B8EA1C7C843F00A847F8 /* AppBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

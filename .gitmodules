@@ -1,0 +1,15 @@
+[submodule "Carthage/Checkouts/FeatherweightRouter"]
+	path = Carthage/Checkouts/FeatherweightRouter
+	url = https://github.com/FeatherweightLabs/FeatherweightRouter.git
+[submodule "Carthage/Checkouts/ReactiveFoundation"]
+	path = Carthage/Checkouts/ReactiveFoundation
+	url = https://github.com/ReactiveKit/ReactiveFoundation.git
+[submodule "Carthage/Checkouts/ReactiveKit"]
+	path = Carthage/Checkouts/ReactiveKit
+	url = https://github.com/ReactiveKit/ReactiveKit.git
+[submodule "Carthage/Checkouts/ReactiveUIKit"]
+	path = Carthage/Checkouts/ReactiveUIKit
+	url = https://github.com/ReactiveKit/ReactiveUIKit.git
+[submodule "Carthage/Checkouts/ReSwift"]
+	path = Carthage/Checkouts/ReSwift
+	url = https://github.com/ReSwift/ReSwift.git

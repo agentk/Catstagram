@@ -1,0 +1,5 @@
+github "ReSwift/ReSwift"
+github "ReactiveKit/ReactiveKit"
+github "ReactiveKit/ReactiveUIKit"
+github "ReactiveKit/ReactiveFoundation"
+github "FeatherweightLabs/FeatherweightRouter"
