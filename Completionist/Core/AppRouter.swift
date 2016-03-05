@@ -1,12 +1,31 @@
-//
-//  AppRouter.swift
-//  Completionist
-//
-//  Created by Karl Bowden on 23/02/2016.
-//  Copyright © 2016 Featherweight Labs. All rights reserved.
-//
+import UIKit
+import FeatherweightRouter
 
-import Foundation
+func appRouter(store: AppStore) -> UIRouter {
+    return Router(tabBarPresenter()).junction([
+        Router(navigationPresenter("Inbox")).stack([recordRoutes(store)]),
+        Router(navigationPresenter("History")).stack([historyRoutes(store)]),
+        ])
+}
 
-func AppRouter(store: AppStore) -> UIRouter {
+func recordRoutes(store: AppStore) -> UIRouter {
+    let presenter = mockPresenter(
+        store,
+        backgroundColor: (64, 64, 128),
+        title: "Inbox",
+        callToActionTitle: "-> history",
+        callToActionRoute: "history")
+
+    return Router(presenter).route("inbox")
+}
+
+func historyRoutes(store: AppStore) -> UIRouter {
+    let presenter = mockPresenter(
+        store,
+        backgroundColor: (64, 64, 128),
+        title: "History",
+        callToActionTitle: "-> inbox",
+        callToActionRoute: "inbox")
+
+    return Router(presenter).route("history")
 }

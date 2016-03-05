@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Project Files">
+      <FileRef
+         location = "group:Cartfile">
+      </FileRef>
+      <FileRef
+         location = "group:Cartfile.private">
+      </FileRef>
+      <FileRef
+         location = "group:Cartfile.resolved">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Completionist.xcodeproj">
    </FileRef>

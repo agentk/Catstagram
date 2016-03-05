@@ -1,0 +1,58 @@
+import UIKit
+
+// Source: https://www.mikeash.com/pyblog/friday-qa-2015-12-25-swifty-targetaction.html
+
+class ActionTrampoline<T>: NSObject {
+    var action: T -> Void
+
+    init(action: T -> Void) {
+        self.action = action
+    }
+
+    // swiftlint:disable force_cast
+    @objc func action(sender: UIControl) {
+        action(sender as! T)
+    }
+}
+
+let uiControlAssociatedFunctionObject = UnsafeMutablePointer<Int8>.alloc(1)
+
+protocol UIControlActionFunctionProtocol { }
+
+extension UIControlActionFunctionProtocol where Self: UIControl {
+
+    func addAction(events: UIControlEvents, _ action: Self -> Void) {
+        typealias ActionTrampolineSelf = ActionTrampoline<Self>
+        let trampoline = ActionTrampoline(action: action)
+        self.addTarget(trampoline, action: #selector(ActionTrampolineSelf.action(_:)),
+                       forControlEvents: events)
+        objc_setAssociatedObject(self, uiControlAssociatedFunctionObject,
+            trampoline, .OBJC_ASSOCIATION_RETAIN)
+    }
+}
+
+extension UIControl: UIControlActionFunctionProtocol { }
+
+// Dispatch application signals
+//extension UIApplicationDelegate where Self: DispatchDelegate {
+//
+//    func applicationWillResignActive(application: UIApplication) {
+//        dispatch(ApplicationDelegateAction.WillResignActive)
+//    }
+//
+//    func applicationDidEnterBackground(application: UIApplication) {
+//        dispatch(ApplicationDelegateAction.DidEnterBackground)
+//    }
+//
+//    func applicationWillEnterForeground(application: UIApplication) {
+//        dispatch(ApplicationDelegateAction.WillEnterForeground)
+//    }
+//
+//    func applicationDidBecomeActive(application: UIApplication) {
+//        dispatch(ApplicationDelegateAction.DidBecomeActive)
+//    }
+//
+//    func applicationWillTerminate(application: UIApplication) {
+//        dispatch(ApplicationDelegateAction.WillTerminate)
+//    }
+//}
