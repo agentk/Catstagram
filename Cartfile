@@ -1,4 +1,5 @@
 github "ReSwift/ReSwift"
+github "ReSwift/ReSwift-Recorder"
 github "ReactiveKit/ReactiveKit"
 github "ReactiveKit/ReactiveUIKit"
 github "ReactiveKit/ReactiveFoundation"

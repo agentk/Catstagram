@@ -5,33 +5,37 @@ import ReactiveKit
 
 class AppCoordinator {
 
+
     let store: AppStore
     let router: Router<UIViewController>
     let viewController: UIViewController
 
     let bag = DisposeBag()
 
-    init() {
+    init(state: AppState? = nil, feedService: FeedProviderService) {
+
         store = ObservableStore(
             reducer: AppReducer(),
-            state: AppState(),
-            middleware: [])
+            state: state ?? AppState(),
+            middleware: [
+                makeFeedListMiddleware(feedService),
+                makeUserMiddleware(feedService),
+            ])
 
         router = appRouter(store)
         viewController = router.presenter
 
         subscribeRouterToUpdates()
+    }
 
-        setInitialRoute()
+    deinit {
+        bag.dispose()
     }
 
     func subscribeRouterToUpdates() {
-        store.map { $0.route }.observe { [unowned self] route in
+        store.map { $0.route }.distinct().observe { [unowned self] route in
+            if route == "" { return }
             self.router.setRoute(route)
-            }.disposeIn(bag)
-    }
-
-    func setInitialRoute() {
-        store.dispatch(RouteAction.Set(path: "inbox"))
+        }.disposeIn(bag)
     }
 }

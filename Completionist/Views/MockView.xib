@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10115" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MockViewController" customModule="Captains_Log" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MockViewController" customModule="Completionist" customModuleProvider="target">
             <connections>
                 <outlet property="actionButton" destination="E7m-Xa-kqP" id="hyg-s9-KNd"/>
                 <outlet property="titleLabel" destination="yDN-uI-WuF" id="EQu-6g-Kzl"/>
@@ -19,33 +19,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7m-Xa-kqP">
-                    <rect key="frame" x="8" y="331" width="584" height="86"/>
+                    <rect key="frame" x="8" y="257" width="584" height="86"/>
                     <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="0.71121541499999996" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="86" id="mej-PS-p90"/>
+                        <constraint firstAttribute="height" constant="86" id="PYT-RN-SgU"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                     <color key="tintColor" red="0.063133142889999994" green="0.13507765529999999" blue="0.23469799760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Button"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDN-uI-WuF">
-                    <rect key="frame" x="8" y="182" width="584" height="62"/>
+                    <rect key="frame" x="8" y="162" width="584" height="62"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="62" id="lvp-08-ZuE"/>
+                        <constraint firstAttribute="height" constant="62" id="W8d-5q-5qz"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="yDN-uI-WuF" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="7XY-3v-Cl7"/>
-                <constraint firstItem="E7m-Xa-kqP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="B0L-2H-gWc"/>
-                <constraint firstItem="E7m-Xa-kqP" firstAttribute="top" secondItem="yDN-uI-WuF" secondAttribute="bottom" constant="87" id="Ece-aV-u1X"/>
-                <constraint firstItem="E7m-Xa-kqP" firstAttribute="trailing" secondItem="yDN-uI-WuF" secondAttribute="trailing" id="SKq-aH-El7"/>
-                <constraint firstItem="E7m-Xa-kqP" firstAttribute="leading" secondItem="yDN-uI-WuF" secondAttribute="leading" id="eBS-wv-k8C"/>
-                <constraint firstItem="yDN-uI-WuF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="182" id="m1J-wJ-Q8C"/>
+                <constraint firstItem="E7m-Xa-kqP" firstAttribute="top" secondItem="yDN-uI-WuF" secondAttribute="bottom" constant="33" id="6YP-1d-Sb4"/>
+                <constraint firstItem="yDN-uI-WuF" firstAttribute="leading" secondItem="E7m-Xa-kqP" secondAttribute="leading" id="MTG-LL-8P8"/>
+                <constraint firstItem="yDN-uI-WuF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="ibO-px-v5E"/>
+                <constraint firstItem="yDN-uI-WuF" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="jDf-pu-hU9"/>
+                <constraint firstItem="E7m-Xa-kqP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kXx-lS-07a"/>
+                <constraint firstItem="yDN-uI-WuF" firstAttribute="trailing" secondItem="E7m-Xa-kqP" secondAttribute="trailing" id="yKF-S0-8fx"/>
             </constraints>
         </view>
     </objects>

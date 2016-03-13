@@ -12,6 +12,8 @@ struct AppReducer: Reducer {
         default: break
         }
 
-        return state
+        state.users = userReducer(action, users: state.users)
+
+        return feedListReducer(action, state: state)
     }
 }

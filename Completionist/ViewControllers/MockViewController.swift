@@ -7,7 +7,7 @@ protocol ProvidesMockData {
     var navigateToAction: () -> Void { get }
 }
 
-class MockViewController: UIViewController {
+final class MockViewController: UIViewController {
 
     let viewModel: ProvidesMockData
 
@@ -27,7 +27,6 @@ class MockViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         view.backgroundColor = UIColor(
             red: CGFloat(viewModel.backgroundColor.0) / 255,
             green: CGFloat(viewModel.backgroundColor.1) / 255,

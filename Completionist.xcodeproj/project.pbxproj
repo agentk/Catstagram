@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73500F9D1C92E89200A8D59F /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500F9C1C92E89200A8D59F /* FeedListViewController.swift */; };
+		73500FA01C93CA6300A8D59F /* FeedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500F9F1C93CA6300A8D59F /* FeedListPresenter.swift */; };
+		73500FA21C93DE1500A8D59F /* FeedListInputSubstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FA11C93DE1500A8D59F /* FeedListInputSubstate.swift */; };
+		73500FA41C93DFA500A8D59F /* FeedListOutputDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FA31C93DFA500A8D59F /* FeedListOutputDispatch.swift */; };
+		73500FA61C93E0A000A8D59F /* FeedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FA51C93E0A000A8D59F /* FeedAction.swift */; };
+		73500FA81C93EC6C00A8D59F /* SummaryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FA71C93EC6C00A8D59F /* SummaryItemCell.swift */; };
+		73500FAB1C93F1D000A8D59F /* StaticFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FAA1C93F1D000A8D59F /* StaticFeedService.swift */; };
+		73500FAD1C93F21700A8D59F /* FeedProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FAC1C93F21700A8D59F /* FeedProviderService.swift */; };
+		73500FAF1C93F35B00A8D59F /* FeedItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FAE1C93F35B00A8D59F /* FeedItemPresenter.swift */; };
 		735D3A981C8AB8EC004D2495 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 735D3A971C8AB8EC004D2495 /* main.m */; };
 		735DDDA81C7C77E900F7332F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DDD9D1C7C77E900F7332F /* AppDelegate.swift */; };
 		735DDDA91C7C77E900F7332F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735DDDA11C7C77E900F7332F /* Assets.xcassets */; };
 		735DDDAA1C7C77E900F7332F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735DDDA21C7C77E900F7332F /* LaunchScreen.storyboard */; };
+		7360EB261C954FFE00955D01 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7360EB251C954FFE00955D01 /* DummyData.swift */; };
 		73620D6D1C8AAD1F00E256A3 /* FeatherweightRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73620D681C8AAD1F00E256A3 /* FeatherweightRouter.framework */; };
 		73620D6E1C8AAD1F00E256A3 /* ReactiveFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73620D691C8AAD1F00E256A3 /* ReactiveFoundation.framework */; };
 		73620D6F1C8AAD1F00E256A3 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73620D6A1C8AAD1F00E256A3 /* ReactiveKit.framework */; };
@@ -23,7 +33,7 @@
 		73620D801C8AB08A00E256A3 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D7F1C8AB08A00E256A3 /* TabBarPresenter.swift */; };
 		73620D821C8AB0AF00E256A3 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D811C8AB0AF00E256A3 /* MockViewController.swift */; };
 		73620D871C8AB14600E256A3 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D841C8AB14600E256A3 /* Delay.swift */; };
-		73620D881C8AB14600E256A3 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D851C8AB14600E256A3 /* UIKit+Extensions.swift */; };
+		73620D881C8AB14600E256A3 /* UIControl+ActionTrampoline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D851C8AB14600E256A3 /* UIControl+ActionTrampoline.swift */; };
 		73620D891C8AB14600E256A3 /* UIWindow+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D861C8AB14600E256A3 /* UIWindow+init.swift */; };
 		73620D8B1C8AB1CB00E256A3 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D8A1C8AB1CB00E256A3 /* MockViewModel.swift */; };
 		73620D8D1C8AB1CF00E256A3 /* MockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73620D8C1C8AB1CF00E256A3 /* MockView.xib */; };
@@ -31,6 +41,14 @@
 		73620D911C8AB1E100E256A3 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D901C8AB1E100E256A3 /* AppReducer.swift */; };
 		73620D931C8AB26D00E256A3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D921C8AB26D00E256A3 /* AppCoordinator.swift */; };
 		73620D951C8AB2C400E256A3 /* ObservableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73620D941C8AB2C400E256A3 /* ObservableStore.swift */; };
+		738756321C955B6B0024768C /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738756311C955B6B0024768C /* UserAction.swift */; };
+		738756341C955BAF0024768C /* UserMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738756331C955BAF0024768C /* UserMiddleware.swift */; };
+		738756361C955D8A0024768C /* UserReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738756351C955D8A0024768C /* UserReducer.swift */; };
+		73C089D91C9448570096B802 /* FeedRefreshActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C089D81C9448570096B802 /* FeedRefreshActionCreator.swift */; };
+		73C089DC1C944A2B0096B802 /* FeedListMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C089DB1C944A2B0096B802 /* FeedListMiddleware.swift */; };
+		73C089DE1C9451D20096B802 /* FeedListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C089DD1C9451D20096B802 /* FeedListReducer.swift */; };
+		73C5A0C31C9503DB00E2CC96 /* DetailItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A0C21C9503DB00E2CC96 /* DetailItemCell.swift */; };
+		73C5A0C51C95079F00E2CC96 /* DetailItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73C5A0C41C95079F00E2CC96 /* DetailItemCell.xib */; };
 		73C5B8E81C7C83EC00A847F8 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5B8E71C7C83EC00A847F8 /* AppRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +63,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73500F9C1C92E89200A8D59F /* FeedListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
+		73500F9F1C93CA6300A8D59F /* FeedListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListPresenter.swift; sourceTree = "<group>"; };
+		73500FA11C93DE1500A8D59F /* FeedListInputSubstate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInputSubstate.swift; sourceTree = "<group>"; };
+		73500FA31C93DFA500A8D59F /* FeedListOutputDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListOutputDispatch.swift; sourceTree = "<group>"; };
+		73500FA51C93E0A000A8D59F /* FeedAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedAction.swift; sourceTree = "<group>"; };
+		73500FA71C93EC6C00A8D59F /* SummaryItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryItemCell.swift; sourceTree = "<group>"; };
+		73500FAA1C93F1D000A8D59F /* StaticFeedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFeedService.swift; sourceTree = "<group>"; };
+		73500FAC1C93F21700A8D59F /* FeedProviderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedProviderService.swift; sourceTree = "<group>"; };
+		73500FAE1C93F35B00A8D59F /* FeedItemPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemPresenter.swift; sourceTree = "<group>"; };
 		735D3A961C8AB8EB004D2495 /* Completionist-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Completionist-Bridging-Header.h"; sourceTree = "<group>"; };
 		735D3A971C8AB8EC004D2495 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		735DDD771C7C763400F7332F /* Completionist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Completionist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +80,7 @@
 		735DDDA11C7C77E900F7332F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735DDDA31C7C77E900F7332F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		735DDDA41C7C77E900F7332F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7360EB251C954FFE00955D01 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		73620D681C8AAD1F00E256A3 /* FeatherweightRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeatherweightRouter.framework; path = Carthage/Build/iOS/FeatherweightRouter.framework; sourceTree = "<group>"; };
 		73620D691C8AAD1F00E256A3 /* ReactiveFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveFoundation.framework; path = Carthage/Build/iOS/ReactiveFoundation.framework; sourceTree = "<group>"; };
 		73620D6A1C8AAD1F00E256A3 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/iOS/ReactiveKit.framework; sourceTree = "<group>"; };
@@ -65,7 +93,7 @@
 		73620D7F1C8AB08A00E256A3 /* TabBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		73620D811C8AB0AF00E256A3 /* MockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		73620D841C8AB14600E256A3 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
-		73620D851C8AB14600E256A3 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
+		73620D851C8AB14600E256A3 /* UIControl+ActionTrampoline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+ActionTrampoline.swift"; sourceTree = "<group>"; };
 		73620D861C8AB14600E256A3 /* UIWindow+init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+init.swift"; sourceTree = "<group>"; };
 		73620D8A1C8AB1CB00E256A3 /* MockViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		73620D8C1C8AB1CF00E256A3 /* MockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MockView.xib; sourceTree = "<group>"; };
@@ -73,6 +101,14 @@
 		73620D901C8AB1E100E256A3 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		73620D921C8AB26D00E256A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		73620D941C8AB2C400E256A3 /* ObservableStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableStore.swift; sourceTree = "<group>"; };
+		738756311C955B6B0024768C /* UserAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
+		738756331C955BAF0024768C /* UserMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMiddleware.swift; sourceTree = "<group>"; };
+		738756351C955D8A0024768C /* UserReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReducer.swift; sourceTree = "<group>"; };
+		73C089D81C9448570096B802 /* FeedRefreshActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedRefreshActionCreator.swift; sourceTree = "<group>"; };
+		73C089DB1C944A2B0096B802 /* FeedListMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListMiddleware.swift; sourceTree = "<group>"; };
+		73C089DD1C9451D20096B802 /* FeedListReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListReducer.swift; sourceTree = "<group>"; };
+		73C5A0C21C9503DB00E2CC96 /* DetailItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailItemCell.swift; sourceTree = "<group>"; };
+		73C5A0C41C95079F00E2CC96 /* DetailItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailItemCell.xib; sourceTree = "<group>"; };
 		73C5B8E71C7C83EC00A847F8 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,11 +135,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73500FA91C93F19F00A8D59F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				73500FAA1C93F1D000A8D59F /* StaticFeedService.swift */,
+				73500FAC1C93F21700A8D59F /* FeedProviderService.swift */,
+				7360EB251C954FFE00955D01 /* DummyData.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		735DDD6E1C7C763400F7332F = {
 			isa = PBXGroup;
 			children = (
-				73620D731C8AAD3800E256A3 /* Carthage */,
 				735DDD9A1C7C77E900F7332F /* Completionist */,
+				73620D731C8AAD3800E256A3 /* Carthage */,
 				735DDD781C7C763400F7332F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,11 +166,14 @@
 		735DDD9A1C7C77E900F7332F /* Completionist */ = {
 			isa = PBXGroup;
 			children = (
+				73C089D71C94483A0096B802 /* ActionCreators */,
 				735DDD9B1C7C77E900F7332F /* Actions */,
 				735DDD9C1C7C77E900F7332F /* Core */,
 				73620D831C8AB14600E256A3 /* Extensions */,
+				73C089DA1C9449F60096B802 /* Middleware */,
 				73620D7A1C8AB04D00E256A3 /* Presenters */,
 				735DDD9E1C7C77E900F7332F /* Reducers */,
+				73500FA91C93F19F00A8D59F /* Services */,
 				735DDD9F1C7C77E900F7332F /* State */,
 				735DDDA01C7C77E900F7332F /* Supporting Files */,
 				735DDDA51C7C77E900F7332F /* ViewControllers */,
@@ -138,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				73620D8E1C8AB1D800E256A3 /* RouteAction.swift */,
+				73500FA51C93E0A000A8D59F /* FeedAction.swift */,
+				738756311C955B6B0024768C /* UserAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -160,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				73620D901C8AB1E100E256A3 /* AppReducer.swift */,
+				73C089DD1C9451D20096B802 /* FeedListReducer.swift */,
+				738756351C955D8A0024768C /* UserReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -185,7 +238,10 @@
 		735DDDA51C7C77E900F7332F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				73C5A0C21C9503DB00E2CC96 /* DetailItemCell.swift */,
+				73500F9C1C92E89200A8D59F /* FeedListViewController.swift */,
 				73620D811C8AB0AF00E256A3 /* MockViewController.swift */,
+				73500FA71C93EC6C00A8D59F /* SummaryItemCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,6 +249,8 @@
 		735DDDA61C7C77E900F7332F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				73500FA11C93DE1500A8D59F /* FeedListInputSubstate.swift */,
+				73500FA31C93DFA500A8D59F /* FeedListOutputDispatch.swift */,
 				73620D8A1C8AB1CB00E256A3 /* MockViewModel.swift */,
 			);
 			path = ViewModels;
@@ -202,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				73620D8C1C8AB1CF00E256A3 /* MockView.xib */,
+				73C5A0C41C95079F00E2CC96 /* DetailItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +296,8 @@
 		73620D7A1C8AB04D00E256A3 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				73500FAE1C93F35B00A8D59F /* FeedItemPresenter.swift */,
+				73500F9F1C93CA6300A8D59F /* FeedListPresenter.swift */,
 				73620D7B1C8AB05F00E256A3 /* MockPresenter.swift */,
 				73620D7D1C8AB07E00E256A3 /* NavigationPresenter.swift */,
 				73620D7F1C8AB08A00E256A3 /* TabBarPresenter.swift */,
@@ -248,10 +309,27 @@
 			isa = PBXGroup;
 			children = (
 				73620D841C8AB14600E256A3 /* Delay.swift */,
-				73620D851C8AB14600E256A3 /* UIKit+Extensions.swift */,
+				73620D851C8AB14600E256A3 /* UIControl+ActionTrampoline.swift */,
 				73620D861C8AB14600E256A3 /* UIWindow+init.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		73C089D71C94483A0096B802 /* ActionCreators */ = {
+			isa = PBXGroup;
+			children = (
+				73C089D81C9448570096B802 /* FeedRefreshActionCreator.swift */,
+			);
+			path = ActionCreators;
+			sourceTree = "<group>";
+		};
+		73C089DA1C9449F60096B802 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				73C089DB1C944A2B0096B802 /* FeedListMiddleware.swift */,
+				738756331C955BAF0024768C /* UserMiddleware.swift */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +342,7 @@
 				73620D961C8AB5A200E256A3 /* Swift Lint */,
 				735DDD731C7C763400F7332F /* Sources */,
 				735DDD741C7C763400F7332F /* Frameworks */,
+				73500F9E1C93C19000A8D59F /* Injection4Xcode - Unhide and relink */,
 				735DDD751C7C763400F7332F /* Resources */,
 				73620D751C8AAD8900E256A3 /* Carthage - Copy Frameworks */,
 			);
@@ -338,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				735DDDA91C7C77E900F7332F /* Assets.xcassets in Resources */,
+				73C5A0C51C95079F00E2CC96 /* DetailItemCell.xib in Resources */,
 				73620D8D1C8AB1CF00E256A3 /* MockView.xib in Resources */,
 				735DDDAA1C7C77E900F7332F /* LaunchScreen.storyboard in Resources */,
 			);
@@ -353,6 +433,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		73500F9E1C93C19000A8D59F /* Injection4Xcode - Unhide and relink */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Injection4Xcode - Unhide and relink";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "~/bin/unhide.sh";
+		};
 		73620D751C8AAD8900E256A3 /* Carthage - Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,18 +490,35 @@
 				73C5B8E81C7C83EC00A847F8 /* AppRouter.swift in Sources */,
 				73620D791C8AAF0F00E256A3 /* AppState.swift in Sources */,
 				73620D7E1C8AB07E00E256A3 /* NavigationPresenter.swift in Sources */,
+				738756341C955BAF0024768C /* UserMiddleware.swift in Sources */,
 				73620D8F1C8AB1D800E256A3 /* RouteAction.swift in Sources */,
 				73620D931C8AB26D00E256A3 /* AppCoordinator.swift in Sources */,
+				73C089DC1C944A2B0096B802 /* FeedListMiddleware.swift in Sources */,
 				73620D8B1C8AB1CB00E256A3 /* MockViewModel.swift in Sources */,
+				73500F9D1C92E89200A8D59F /* FeedListViewController.swift in Sources */,
+				738756321C955B6B0024768C /* UserAction.swift in Sources */,
 				735DDDA81C7C77E900F7332F /* AppDelegate.swift in Sources */,
+				73500FA61C93E0A000A8D59F /* FeedAction.swift in Sources */,
 				73620D821C8AB0AF00E256A3 /* MockViewController.swift in Sources */,
 				73620D801C8AB08A00E256A3 /* TabBarPresenter.swift in Sources */,
 				73620D951C8AB2C400E256A3 /* ObservableStore.swift in Sources */,
+				73500FA41C93DFA500A8D59F /* FeedListOutputDispatch.swift in Sources */,
+				73500FAF1C93F35B00A8D59F /* FeedItemPresenter.swift in Sources */,
 				73620D911C8AB1E100E256A3 /* AppReducer.swift in Sources */,
 				73620D891C8AB14600E256A3 /* UIWindow+init.swift in Sources */,
+				73500FAB1C93F1D000A8D59F /* StaticFeedService.swift in Sources */,
+				73C089D91C9448570096B802 /* FeedRefreshActionCreator.swift in Sources */,
+				73500FA81C93EC6C00A8D59F /* SummaryItemCell.swift in Sources */,
+				73500FAD1C93F21700A8D59F /* FeedProviderService.swift in Sources */,
+				7360EB261C954FFE00955D01 /* DummyData.swift in Sources */,
+				73C5A0C31C9503DB00E2CC96 /* DetailItemCell.swift in Sources */,
+				73500FA01C93CA6300A8D59F /* FeedListPresenter.swift in Sources */,
 				735D3A981C8AB8EC004D2495 /* main.m in Sources */,
-				73620D881C8AB14600E256A3 /* UIKit+Extensions.swift in Sources */,
+				738756361C955D8A0024768C /* UserReducer.swift in Sources */,
+				73620D881C8AB14600E256A3 /* UIControl+ActionTrampoline.swift in Sources */,
 				73620D7C1C8AB05F00E256A3 /* MockPresenter.swift in Sources */,
+				73C089DE1C9451D20096B802 /* FeedListReducer.swift in Sources */,
+				73500FA21C93DE1500A8D59F /* FeedListInputSubstate.swift in Sources */,
 				73620D771C8AAED600E256A3 /* AppTypes.swift in Sources */,
 				73620D871C8AB14600E256A3 /* Delay.swift in Sources */,
 			);
@@ -472,6 +583,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -481,6 +593,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -534,6 +647,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Completionist/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.completionist;
@@ -564,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = completionistTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.completionistTests;

@@ -5,10 +5,14 @@ func navigationPresenter(title: String) -> UIPresenter {
 
     let navigationController = UINavigationController()
     navigationController.tabBarItem.title = title
-    navigationController.tabBarItem.image = UIImage(named: "placeholder-icon")
+//    navigationController.tabBarItem.image = UIImage(named: "placeholder-icon")
+
+    func setChildren(children: [UIViewController]) {
+        navigationController.setViewControllers(children, animated: true)
+    }
 
     return RouterDelegate(
         getPresenter: { navigationController },
         setChild: { _ in },
-        setChildren: { navigationController.setViewControllers($0, animated: true)})
+        setChildren: setChildren)
 }

@@ -13,3 +13,6 @@
 [submodule "Carthage/Checkouts/ReSwift"]
 	path = Carthage/Checkouts/ReSwift
 	url = https://github.com/ReSwift/ReSwift.git
+[submodule "Carthage/Checkouts/ReSwift-Recorder"]
+	path = Carthage/Checkouts/ReSwift-Recorder
+	url = https://github.com/ReSwift/ReSwift-Recorder.git
