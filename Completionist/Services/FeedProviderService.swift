@@ -1,6 +1,6 @@
 protocol FeedProviderService {
 
-    func updateFeed(callback: [(UpdateType, FeedItem)]? -> Void)
+    func updateFeed(callback: [FeedUpdateItem]? -> Void)
 
     func itemDetail(itemId: Int, callback: FeedItem? -> Void)
 
@@ -8,7 +8,7 @@ protocol FeedProviderService {
     func getUser(id: Int, callback: User? -> Void)
 }
 
-enum UpdateType {
+enum UpdateType: String {
     case Add
     case Update
     case Delete

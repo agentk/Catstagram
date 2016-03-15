@@ -12,7 +12,6 @@ let makeUserMiddleware: FeedProviderService -> Middleware = { feedService in {
                 for userId in userIds {
                     feedService.getUser(userId) { user in
                         guard let user = user else { return }
-                        print(user)
                         delay(0.1 * Double(arc4random_uniform(10))) {
                             dispatch?(UserAction.MassUpdateUsers([user]))
                         }

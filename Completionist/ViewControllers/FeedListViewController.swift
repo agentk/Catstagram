@@ -8,8 +8,12 @@ protocol FeedListInput {
 }
 
 protocol FeedListOutput {
-    func didSelectItem(item: FeedItem)
     func refreshList()
+    func didHeartItem(itemId: Int)
+    func didUnheartItem(itemId: Int)
+    func didArchiveItem(itemId: Int)
+    func didUnarchiveItem(itemId: Int)
+    func didSelectItem(itemId: Int)
 }
 
 final class FeedListViewController: UITableViewController {
@@ -24,10 +28,16 @@ final class FeedListViewController: UITableViewController {
     init(input: FeedListInput, output: FeedListOutput) {
         self.input = input
         self.output = output
+
         super.init(nibName: nil, bundle: nil)
 
         title = "Feed list"
         tabBarItem.title = "Feed list"
+
+    }
+
+    override func loadView() {
+        tableView = UITableView(frame: CGRect.zero, style: .Grouped)
     }
 
     override func viewDidLoad() {
@@ -71,5 +81,38 @@ final class FeedListViewController: UITableViewController {
             return cell
         }
 
+    }
+
+    override func tableView(
+        tableView: UITableView,
+        editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let item = input.items[indexPath.row]
+
+        return [
+            heartRowAction(item),
+            archiveRowAction(item),
+        ]
+    }
+
+    func heartRowAction(item: FeedItem) -> UITableViewRowAction {
+        return UITableViewRowAction(
+            style: .Normal,
+            title: item.likeCount > 0 ? "👎" : "❤️",
+            handler: indexedAction(
+                item.likeCount > 0 ? output.didUnheartItem : output.didHeartItem))
+    }
+
+    func archiveRowAction(item: FeedItem) -> UITableViewRowAction {
+        return UITableViewRowAction(
+            style: .Normal,
+            title: item.unread ? "🗑" : "📥",
+            handler: indexedAction(item.unread ? output.didArchiveItem : output.didUnarchiveItem))
+    }
+
+    func indexedAction(action: Int -> Void) -> (UITableViewRowAction, NSIndexPath) -> Void {
+        return { [unowned self] row, indexPath in
+            self.tableView.editing = false
+            action(self.input.items[indexPath.row].id)
+        }
     }
 }

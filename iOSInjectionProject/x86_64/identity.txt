@@ -1,0 +1,2 @@
+/Users/agentk/Library/Developer/Xcode/DerivedData/Completionist-btqxnntsytmmfpcutxmtkehnosby/Build/Products/Debug-iphonesimulator/Completionist.app
+

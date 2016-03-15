@@ -4,6 +4,8 @@ import ReactiveKit
 class ObservableStore<State: StateType>: Store<State> {
 
     let observable: Observable<State>
+    var isDispatching = false
+    var reducer: AnyReducer!
 
     override var state: State! {
         didSet {
@@ -14,6 +16,7 @@ class ObservableStore<State: StateType>: Store<State> {
     required init(reducer: AnyReducer, state: State, middleware: [Middleware]) {
         observable = Observable(state)
         super.init(reducer: reducer, state: state, middleware: middleware)
+        self.reducer = reducer
     }
 
     func map<U: Equatable>(selector: State -> U) -> Stream<U> {
@@ -23,4 +26,5 @@ class ObservableStore<State: StateType>: Store<State> {
     func dispatchAction(action: Action) {
         dispatch(action)
     }
+
 }

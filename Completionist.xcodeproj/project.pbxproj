@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733A9F5E1C96DFFA00F737F4 /* RecordingObservableStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733A9F5D1C96DFFA00F737F4 /* RecordingObservableStore.swift */; };
 		73500F9D1C92E89200A8D59F /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500F9C1C92E89200A8D59F /* FeedListViewController.swift */; };
 		73500FA01C93CA6300A8D59F /* FeedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500F9F1C93CA6300A8D59F /* FeedListPresenter.swift */; };
 		73500FA21C93DE1500A8D59F /* FeedListInputSubstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73500FA11C93DE1500A8D59F /* FeedListInputSubstate.swift */; };
@@ -44,6 +45,10 @@
 		738756321C955B6B0024768C /* UserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738756311C955B6B0024768C /* UserAction.swift */; };
 		738756341C955BAF0024768C /* UserMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738756331C955BAF0024768C /* UserMiddleware.swift */; };
 		738756361C955D8A0024768C /* UserReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738756351C955D8A0024768C /* UserReducer.swift */; };
+		73ADEA5F1C9800EF00F29130 /* SocketIOClientSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73ADEA5E1C9800EF00F29130 /* SocketIOClientSwift.framework */; };
+		73AE224E1C981D33007D8DDC /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE224D1C981D33007D8DDC /* FeedItem.swift */; };
+		73AE22501C981E63007D8DDC /* FeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE224F1C981E63007D8DDC /* FeedImage.swift */; };
+		73AE22521C981E85007D8DDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE22511C981E85007D8DDC /* User.swift */; };
 		73C089D91C9448570096B802 /* FeedRefreshActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C089D81C9448570096B802 /* FeedRefreshActionCreator.swift */; };
 		73C089DC1C944A2B0096B802 /* FeedListMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C089DB1C944A2B0096B802 /* FeedListMiddleware.swift */; };
 		73C089DE1C9451D20096B802 /* FeedListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C089DD1C9451D20096B802 /* FeedListReducer.swift */; };
@@ -63,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		733A9F5D1C96DFFA00F737F4 /* RecordingObservableStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingObservableStore.swift; sourceTree = "<group>"; };
 		73500F9C1C92E89200A8D59F /* FeedListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
 		73500F9F1C93CA6300A8D59F /* FeedListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListPresenter.swift; sourceTree = "<group>"; };
 		73500FA11C93DE1500A8D59F /* FeedListInputSubstate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListInputSubstate.swift; sourceTree = "<group>"; };
@@ -101,9 +107,17 @@
 		73620D901C8AB1E100E256A3 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		73620D921C8AB26D00E256A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		73620D941C8AB2C400E256A3 /* ObservableStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableStore.swift; sourceTree = "<group>"; };
+		737A2F3B1C957A9400626CC8 /* RecordingStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingStore.swift; sourceTree = "<group>"; };
+		737A2F3C1C957A9400626CC8 /* StateHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		737A2F3D1C957A9400626CC8 /* StateHistorySliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHistorySliderView.swift; sourceTree = "<group>"; };
+		737A2F3E1C957A9400626CC8 /* StateHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHistoryView.swift; sourceTree = "<group>"; };
 		738756311C955B6B0024768C /* UserAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 		738756331C955BAF0024768C /* UserMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMiddleware.swift; sourceTree = "<group>"; };
 		738756351C955D8A0024768C /* UserReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReducer.swift; sourceTree = "<group>"; };
+		73ADEA5E1C9800EF00F29130 /* SocketIOClientSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIOClientSwift.framework; path = Carthage/Build/iOS/SocketIOClientSwift.framework; sourceTree = "<group>"; };
+		73AE224D1C981D33007D8DDC /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		73AE224F1C981E63007D8DDC /* FeedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedImage.swift; sourceTree = "<group>"; };
+		73AE22511C981E85007D8DDC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		73C089D81C9448570096B802 /* FeedRefreshActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedRefreshActionCreator.swift; sourceTree = "<group>"; };
 		73C089DB1C944A2B0096B802 /* FeedListMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListMiddleware.swift; sourceTree = "<group>"; };
 		73C089DD1C9451D20096B802 /* FeedListReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListReducer.swift; sourceTree = "<group>"; };
@@ -119,6 +133,7 @@
 			files = (
 				73620D6D1C8AAD1F00E256A3 /* FeatherweightRouter.framework in Frameworks */,
 				73620D6E1C8AAD1F00E256A3 /* ReactiveFoundation.framework in Frameworks */,
+				73ADEA5F1C9800EF00F29130 /* SocketIOClientSwift.framework in Frameworks */,
 				73620D6F1C8AAD1F00E256A3 /* ReactiveKit.framework in Frameworks */,
 				73620D701C8AAD1F00E256A3 /* ReactiveUIKit.framework in Frameworks */,
 				73620D711C8AAD1F00E256A3 /* ReSwift.framework in Frameworks */,
@@ -148,6 +163,7 @@
 		735DDD6E1C7C763400F7332F = {
 			isa = PBXGroup;
 			children = (
+				73ADEA5E1C9800EF00F29130 /* SocketIOClientSwift.framework */,
 				735DDD9A1C7C77E900F7332F /* Completionist */,
 				73620D731C8AAD3800E256A3 /* Carthage */,
 				735DDD781C7C763400F7332F /* Products */,
@@ -169,6 +185,7 @@
 				73C089D71C94483A0096B802 /* ActionCreators */,
 				735DDD9B1C7C77E900F7332F /* Actions */,
 				735DDD9C1C7C77E900F7332F /* Core */,
+				737A2F3A1C957A9400626CC8 /* External-Recorder */,
 				73620D831C8AB14600E256A3 /* Extensions */,
 				73C089DA1C9449F60096B802 /* Middleware */,
 				73620D7A1C8AB04D00E256A3 /* Presenters */,
@@ -203,6 +220,7 @@
 				73C5B8E71C7C83EC00A847F8 /* AppRouter.swift */,
 				73620D761C8AAED600E256A3 /* AppTypes.swift */,
 				73620D941C8AB2C400E256A3 /* ObservableStore.swift */,
+				733A9F5D1C96DFFA00F737F4 /* RecordingObservableStore.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -221,6 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				73620D781C8AAF0F00E256A3 /* AppState.swift */,
+				73AE224D1C981D33007D8DDC /* FeedItem.swift */,
+				73AE224F1C981E63007D8DDC /* FeedImage.swift */,
+				73AE22511C981E85007D8DDC /* User.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -313,6 +334,17 @@
 				73620D861C8AB14600E256A3 /* UIWindow+init.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		737A2F3A1C957A9400626CC8 /* External-Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				737A2F3B1C957A9400626CC8 /* RecordingStore.swift */,
+				737A2F3C1C957A9400626CC8 /* StateHistoryCollectionViewCell.swift */,
+				737A2F3D1C957A9400626CC8 /* StateHistorySliderView.swift */,
+				737A2F3E1C957A9400626CC8 /* StateHistoryView.swift */,
+			);
+			path = "External-Recorder";
 			sourceTree = "<group>";
 		};
 		73C089D71C94483A0096B802 /* ActionCreators */ = {
@@ -458,6 +490,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveUIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveFoundation.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FeatherweightRouter.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SocketIOClientSwift.framework",
 			);
 			name = "Carthage - Copy Frameworks";
 			outputPaths = (
@@ -493,6 +526,7 @@
 				738756341C955BAF0024768C /* UserMiddleware.swift in Sources */,
 				73620D8F1C8AB1D800E256A3 /* RouteAction.swift in Sources */,
 				73620D931C8AB26D00E256A3 /* AppCoordinator.swift in Sources */,
+				73AE224E1C981D33007D8DDC /* FeedItem.swift in Sources */,
 				73C089DC1C944A2B0096B802 /* FeedListMiddleware.swift in Sources */,
 				73620D8B1C8AB1CB00E256A3 /* MockViewModel.swift in Sources */,
 				73500F9D1C92E89200A8D59F /* FeedListViewController.swift in Sources */,
@@ -511,10 +545,13 @@
 				73500FA81C93EC6C00A8D59F /* SummaryItemCell.swift in Sources */,
 				73500FAD1C93F21700A8D59F /* FeedProviderService.swift in Sources */,
 				7360EB261C954FFE00955D01 /* DummyData.swift in Sources */,
+				73AE22521C981E85007D8DDC /* User.swift in Sources */,
+				733A9F5E1C96DFFA00F737F4 /* RecordingObservableStore.swift in Sources */,
 				73C5A0C31C9503DB00E2CC96 /* DetailItemCell.swift in Sources */,
 				73500FA01C93CA6300A8D59F /* FeedListPresenter.swift in Sources */,
 				735D3A981C8AB8EC004D2495 /* main.m in Sources */,
 				738756361C955D8A0024768C /* UserReducer.swift in Sources */,
+				73AE22501C981E63007D8DDC /* FeedImage.swift in Sources */,
 				73620D881C8AB14600E256A3 /* UIControl+ActionTrampoline.swift in Sources */,
 				73620D7C1C8AB05F00E256A3 /* MockPresenter.swift in Sources */,
 				73C089DE1C9451D20096B802 /* FeedListReducer.swift in Sources */,

@@ -4,3 +4,4 @@ github "ReactiveKit/ReactiveKit"
 github "ReactiveKit/ReactiveUIKit"
 github "ReactiveKit/ReactiveFoundation"
 github "FeatherweightLabs/FeatherweightRouter"
+github "socketio/socket.io-client-swift" ~> 5.5.0

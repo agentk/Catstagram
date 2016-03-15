@@ -14,13 +14,24 @@ class AppCoordinator {
 
     init(state: AppState? = nil, feedService: FeedProviderService) {
 
-        store = ObservableStore(
-            reducer: AppReducer(),
-            state: state ?? AppState(),
-            middleware: [
-                makeFeedListMiddleware(feedService),
-                makeUserMiddleware(feedService),
-            ])
+        #if DEBUG
+            store = RecordingObservableStore(
+                reducer: AppReducer(),
+                state: state ?? AppState(),
+                middleware: [
+                    makeFeedListMiddleware(feedService),
+                    makeUserMiddleware(feedService),
+                ],
+                recordingPath: "records")
+        #else
+            store = ObservableStore(
+                reducer: AppReducer(),
+                state: state ?? AppState(),
+                middleware: [
+                    makeFeedListMiddleware(feedService),
+                    makeUserMiddleware(feedService),
+                ])
+        #endif
 
         router = appRouter(store)
         viewController = router.presenter

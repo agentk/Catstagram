@@ -13,13 +13,21 @@ func feedListReducer(action: Action, state: AppState) -> AppState {
 
     case .MassItemUpdate(let updates) as FeedAction:
 
-        for (type, feedItem) in updates {
-            switch type {
+        for update in updates {
+            switch update.type {
             case .Add:
-                state.feedItems.append(feedItem)
+                state.feedItems.append(update.item)
             case .Update: break
             case .Delete: break
             }
+        }
+
+    case .ArchiveItem(let itemId) as FeedAction:
+        state.feedItems = state.feedItems.map { item in
+            guard item.id == itemId else { return item }
+            var item = item
+            item.unread = false
+            return item
         }
 
     default: break

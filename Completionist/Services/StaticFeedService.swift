@@ -2,14 +2,14 @@ import Foundation
 
 class StaticFeedService: FeedProviderService {
 
-    func updateFeed(callback: [(UpdateType, FeedItem)]? -> Void) {
+    func updateFeed(callback: [FeedUpdateItem]? -> Void) {
 
         let count = Int(arc4random_uniform(4))
-        var results = [(UpdateType, FeedItem)]()
+        var results = [FeedUpdateItem]()
         for _ in 0...count {
             var item = FeedItem()
             item.userId = Int(arc4random_uniform(UInt32(DummyData.usernames.count)))
-            results.append((UpdateType.Add, item))
+            results.append(FeedUpdateItem(type: .Add, item: item))
         }
 
         callback(results)

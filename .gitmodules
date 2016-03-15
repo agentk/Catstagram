@@ -16,3 +16,6 @@
 [submodule "Carthage/Checkouts/ReSwift-Recorder"]
 	path = Carthage/Checkouts/ReSwift-Recorder
 	url = https://github.com/ReSwift/ReSwift-Recorder.git
+[submodule "Carthage/Checkouts/socket.io-client-swift"]
+	path = Carthage/Checkouts/socket.io-client-swift
+	url = https://github.com/socketio/socket.io-client-swift.git
