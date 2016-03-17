@@ -1,67 +1,53 @@
 import ReSwift
 import ReactiveKit
+import SocketIOClientSwift
 
-//public typealias TypeMap = [String: StandardActionConvertible.Type]
+public typealias TypeMap = [String: StandardActionConvertible.Type]
 
 class RecordingObservableStore<State: StateType>: ObservableStore<State> {
-
-    typealias RecordedActions = [[String : AnyObject]]
 
     var initialState: State!
     var actionHistory: [Action] = []
     var actionCount: Int = 0
+    var socket: SocketIOClient!
 
-    var recordedActions: RecordedActions = []
-    let recordingPath: String?
-//    private var typeMap: TypeMap = [:]
+    private var typeMap: TypeMap = [:]
 
-    lazy var recordingDirectory: NSURL? = {
-        let timestamp = Int(NSDate.timeIntervalSinceReferenceDate())
-
-        let documentDirectoryURL = try? NSFileManager.defaultManager()
-            .URLForDirectory(
-                .DocumentDirectory,
-                inDomain: .UserDomainMask,
-                appropriateForURL: nil,
-                create: true)
-
-        let path = documentDirectoryURL?
-            .URLByAppendingPathComponent("recording.json")
-
-        print("Recording to path: \(path)")
-        return path
-    }()
-
-    lazy var documentsDirectory: NSURL? = {
-        let documentDirectoryURL = try? NSFileManager.defaultManager()
-            .URLForDirectory(.DocumentDirectory, inDomain:
-                .UserDomainMask, appropriateForURL: nil, create: true)
-
-        return documentDirectoryURL
-    }()
-
-
-//    required init(reducer: AnyReducer, state: State, middleware: [Middleware],
-//                  typeMaps: [TypeMap], recordingPath: String? = nil) {
     required init(reducer: AnyReducer, state: State, middleware: [Middleware],
-                  recordingPath: String? = nil) {
+                  typeMap: TypeMap, socket: SocketIOClient) {
 
         initialState = state
-        self.recordingPath = recordingPath
+        self.typeMap = typeMap
+        self.socket = socket
 
         super.init(reducer: reducer, state: state, middleware: middleware)
 
-        // merge all typemaps into one
-//        typeMaps.forEach { typeMap in
-//            for (key, value) in typeMap {
-//                self.typeMap[key] = value
-//            }
-//        }
+        socket.on("setCurrentAction") { (object, emitter) in
+            guard let stringValue = (object as? [String])?.first else { return }
+            guard let count = Int(stringValue) else { return }
+            self.replayToActionCount(count)
+        }
 
-//        if let recordingPath = recordingPath {
-//            actionHistory = loadActions(recordingPath)
-//            replayToActionCount(actionHistory.count)
-//        }
+        socket.on("allActions") { (object, emitter) in
+            print("[TARDIS]: Rewriting history...")
+            guard let rawActions = (object as? [[[String: AnyObject]]])?.first else { return }
+            self.actionHistory = self.convertToActions(rawActions)
+            self.replayToActionCount(self.actionHistory.count)
+            print("[TARDIS]: Replaced history with \(self.actionHistory.count) actions")
+        }
+
+        socket.on("reset") { (object, emitter) in
+            print("[TARDIS]: Erasing history...")
+            self.actionHistory = []
+            self.actionCount = 0
+            self.state = self.initialState
+        }
+
+        socket.on("connect") { (object, emitter) in
+            socket.emit("getAllActions")
+        }
+
+        socket.emit("getAllActions")
     }
 
     // MARK: - Recording
@@ -83,6 +69,7 @@ class RecordingObservableStore<State: StateType>: ObservableStore<State> {
         }
 
         recordAction(action)
+        actionHistory.append(action)
 
         isDispatching = true
         // swiftlint:disable:next force_cast
@@ -96,8 +83,6 @@ class RecordingObservableStore<State: StateType>: ObservableStore<State> {
     }
 
 
-
-
     func recordAction(action: Action) {
         guard let standardAction = convertActionToStandardAction(action) else {
             return print("ReSwiftRecorder Warning: Could not log following action because it " +
@@ -109,8 +94,7 @@ class RecordingObservableStore<State: StateType>: ObservableStore<State> {
             "action": standardAction.dictionaryRepresentation()
         ]
 
-        recordedActions.append(recordedAction)
-        storeActions(recordedActions)
+        socket.emit("appendAction", recordedAction)
     }
 
 
@@ -125,58 +109,31 @@ class RecordingObservableStore<State: StateType>: ObservableStore<State> {
         return nil
     }
 
-    private func storeActions(actions: RecordedActions) {
-        guard let data = try? NSJSONSerialization.dataWithJSONObject(
-            actions, options: .PrettyPrinted) else {
-                return print("ReSwiftRecorder Warning: Unable to storeActions, actions could not " +
-                    "be serialized")
-        }
+    // MARK: - Reload
 
-        if let path = recordingDirectory {
-            data.writeToURL(path, atomically: true)
+    private func convertToActions(rawActions: [[String: AnyObject]]) -> [Action] {
+        return rawActions.flatMap { rawAction in
+            guard let action = rawAction["action"] as? [String : AnyObject] else { return nil }
+            return decodeAction(action)
+            }
+    }
+
+    private func decodeAction(jsonDictionary: [String : AnyObject]) -> Action {
+        let standardAction = StandardAction(dictionary: jsonDictionary)
+
+        if !standardAction.isTypedAction {
+            return standardAction
+        } else {
+            let typedActionType = self.typeMap[standardAction.type]!
+            return typedActionType.init(standardAction)
         }
     }
 
-    // MARK: - Reload
-
-//    private func loadActions(recording: String) -> [Action] {
-//        guard let recordingPath = documentsDirectory?.URLByAppendingPathComponent(recording)
-//    else {
-//                return []
-//        }
-//
-//        guard let data = NSData(contentsOfURL: recordingPath) else { return [] }
-//
-//        guard let jsonArray = try? NSJSONSerialization.JSONObjectWithData(
-//            data, options: NSJSONReadingOptions(rawValue: 0)) as? Array<AnyObject> else {
-//                return []
-//        }
-//
-//        let actionsArray: [Action] = jsonArray?.flatMap { item in
-//            if let item = item["action"] as? [String : AnyObject] {
-//                return decodeAction(item)
-//            }
-//            return nil
-//            } ?? []
-//
-//        return actionsArray
-//    }
-
-
     // MARK: - Replay
 
-//    private func decodeAction(jsonDictionary: [String : AnyObject]) -> Action {
-//        let standardAction = StandardAction(dictionary: jsonDictionary)
-//
-//        if !standardAction.isTypedAction {
-//            return standardAction
-//        } else {
-//            let typedActionType = self.typeMap[standardAction.type]!
-//            return typedActionType.init(standardAction)
-//        }
-//    }
-
     private func replayToActionCount(actionCount: Int) {
+
+        let actionCount = min(actionCount, actionHistory.count)
         self.actionCount = actionCount
 
         state = actionHistory[0..<actionCount].reduce(initialState) { state, action in
@@ -185,4 +142,9 @@ class RecordingObservableStore<State: StateType>: ObservableStore<State> {
         }
     }
 
+    func disconnect() {
+        socket.off("setCurrentAction")
+        socket.off("setAllAction")
+        socket = nil
+    }
 }

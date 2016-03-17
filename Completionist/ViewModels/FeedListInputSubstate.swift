@@ -30,7 +30,7 @@ class FeedListInputSubstate: FeedListInput {
         return { item in
             var item = item
             let user = users.filter { $0.id == item.userId }.first
-            item.username = "@" + (user?.username ?? "...")
+            item.username = "@" + (user?.username ?? "...") + (item.likeCount > 0 ? " ❤️" : "")
             return item
         }
     }

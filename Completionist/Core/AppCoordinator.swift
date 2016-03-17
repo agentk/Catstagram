@@ -2,17 +2,21 @@ import UIKit
 import FeatherweightRouter
 import ReSwift
 import ReactiveKit
+import SocketIOClientSwift
 
 class AppCoordinator {
 
 
-    let store: AppStore
+    var store: AppStore!
     let router: Router<UIViewController>
     let viewController: UIViewController
+    let devSocket: SocketIOClient
 
     let bag = DisposeBag()
 
-    init(state: AppState? = nil, feedService: FeedProviderService) {
+    init(state: AppState? = nil, feedService: FeedProviderService, socket: SocketIOClient) {
+
+        devSocket = socket
 
         #if DEBUG
             store = RecordingObservableStore(
@@ -22,7 +26,12 @@ class AppCoordinator {
                     makeFeedListMiddleware(feedService),
                     makeUserMiddleware(feedService),
                 ],
-                recordingPath: "records")
+                typeMap: [
+                    "RouteAction": RouteAction.self,
+                    "FeedAction": FeedAction.self,
+                    "UserAction": UserAction.self,
+                ],
+                socket: devSocket)
         #else
             store = ObservableStore(
                 reducer: AppReducer(),
@@ -40,6 +49,11 @@ class AppCoordinator {
     }
 
     deinit {
+        if let store = store as? RecordingObservableStore {
+            print("Calling disconnect")
+            store.disconnect()
+        }
+        store = nil
         bag.dispose()
     }
 

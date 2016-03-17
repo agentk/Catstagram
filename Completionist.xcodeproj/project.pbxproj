@@ -107,10 +107,6 @@
 		73620D901C8AB1E100E256A3 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		73620D921C8AB26D00E256A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		73620D941C8AB2C400E256A3 /* ObservableStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableStore.swift; sourceTree = "<group>"; };
-		737A2F3B1C957A9400626CC8 /* RecordingStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingStore.swift; sourceTree = "<group>"; };
-		737A2F3C1C957A9400626CC8 /* StateHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHistoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		737A2F3D1C957A9400626CC8 /* StateHistorySliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHistorySliderView.swift; sourceTree = "<group>"; };
-		737A2F3E1C957A9400626CC8 /* StateHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHistoryView.swift; sourceTree = "<group>"; };
 		738756311C955B6B0024768C /* UserAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAction.swift; sourceTree = "<group>"; };
 		738756331C955BAF0024768C /* UserMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMiddleware.swift; sourceTree = "<group>"; };
 		738756351C955D8A0024768C /* UserReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReducer.swift; sourceTree = "<group>"; };
@@ -163,7 +159,6 @@
 		735DDD6E1C7C763400F7332F = {
 			isa = PBXGroup;
 			children = (
-				73ADEA5E1C9800EF00F29130 /* SocketIOClientSwift.framework */,
 				735DDD9A1C7C77E900F7332F /* Completionist */,
 				73620D731C8AAD3800E256A3 /* Carthage */,
 				735DDD781C7C763400F7332F /* Products */,
@@ -185,7 +180,6 @@
 				73C089D71C94483A0096B802 /* ActionCreators */,
 				735DDD9B1C7C77E900F7332F /* Actions */,
 				735DDD9C1C7C77E900F7332F /* Core */,
-				737A2F3A1C957A9400626CC8 /* External-Recorder */,
 				73620D831C8AB14600E256A3 /* Extensions */,
 				73C089DA1C9449F60096B802 /* Middleware */,
 				73620D7A1C8AB04D00E256A3 /* Presenters */,
@@ -294,6 +288,7 @@
 				73620D6A1C8AAD1F00E256A3 /* ReactiveKit.framework */,
 				73620D6B1C8AAD1F00E256A3 /* ReactiveUIKit.framework */,
 				73620D6C1C8AAD1F00E256A3 /* ReSwift.framework */,
+				73ADEA5E1C9800EF00F29130 /* SocketIOClientSwift.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -334,17 +329,6 @@
 				73620D861C8AB14600E256A3 /* UIWindow+init.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		737A2F3A1C957A9400626CC8 /* External-Recorder */ = {
-			isa = PBXGroup;
-			children = (
-				737A2F3B1C957A9400626CC8 /* RecordingStore.swift */,
-				737A2F3C1C957A9400626CC8 /* StateHistoryCollectionViewCell.swift */,
-				737A2F3D1C957A9400626CC8 /* StateHistorySliderView.swift */,
-				737A2F3E1C957A9400626CC8 /* StateHistoryView.swift */,
-			);
-			path = "External-Recorder";
 			sourceTree = "<group>";
 		};
 		73C089D71C94483A0096B802 /* ActionCreators */ = {

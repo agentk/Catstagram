@@ -125,7 +125,7 @@ extension FeedAction: StandardActionConvertible {
             self = .EndRefreshFeed
 
         case "MassItemUpdate":
-            guard let data = payload["value"] as? [[String: AnyObject]] else {
+            guard let data = payload["data"] as? [[String: AnyObject]] else {
                 fatalError("Unable to decode standardAction.payload.value: \(standardAction)")
             }
                 self = .MassItemUpdate(data.map { FeedUpdateItem(dictionary: $0) })
